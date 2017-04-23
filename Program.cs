@@ -24,7 +24,8 @@ namespace BigDataNet
             Console.WriteLine(str + "UserID=" + builder.UserID + ";Password=" + builder.Password + ";");
             DbConnection conn1 =
             //new SqlConnection(@"Data Source = IBM-08;Initial Catalog=Northwind;User ID = sa; Password = praktyka");
-            new SqlConnection("Data Source=IBM-08;Initial Catalog=Northwind;Integrated Security=True;" + "UserID=" + builder.UserID.ToString() + ";Password=" + builder.Password.ToString() + ";");
+            //new SqlConnection("Data Source=DESKTOP-EJMT7JC;Initial Catalog=Northwind;Integrated Security=True;" + "UserID=" + builder.UserID.ToString() + ";Password=" + builder.Password.ToString() + ";");
+            new SqlConnection(@"Data Source=DESKTOP-EJMT7JC;Initial Catalog=Northwind;Integrated Security=True");
             conn1.StateChange += Conn1_StateChange;
             try
             {
