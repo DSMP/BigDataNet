@@ -27,12 +27,15 @@ namespace BigDataNet
             new SqlConnection(str + "User ID=" + builder.UserID.ToString() + ";Password=" + builder.Password.ToString() + ";");
             conn1.StateChange += Conn1_StateChange;
             SqlCommand command = new SqlCommand();
-            command.CommandText = @"insert into Employees values('Michał','Bartłomiejczyk','dyktator',400.00 )";
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.CommandText = "sp_dodaj";
+            command.Parameters.Add(new SqlParameter("arg1", 1));
+            command.Parameters.Add(new SqlParameter("arg2", 3));
             try
             {
                 conn1.Open();
                 command.Connection = conn1;
-                int rowsInserted = command.ExecuteNonQuery();
+                Console.WriteLine(command.ExecuteScalar());
                 conn1.Close();
             }
             catch (NullReferenceException)
