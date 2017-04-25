@@ -30,10 +30,10 @@ namespace BigDataNet
             try
             {
                 conn1.Open();
-                SqlDataReader reader = new SqlCommand("select ProductID, ProductName, UnitPrice, UnitsInStock from products where UnitPrice IS NOT NULL", conn1).ExecuteReader();
+                SqlDataReader reader = new SqlCommand(@"SELECT p.ProductID, p.ProductName, c.CategoryName, p.UnitPrice, p.UnitsInStock FROM Products AS p INNER JOIN Categories AS c ON p.CategoryID = c.CategoryID where UnitPrice IS NOT NULL", conn1).ExecuteReader();
                 while (reader.Read())
                 {
-                    Console.WriteLine("{0}\t{1}\t{2}\t{3}\t", reader[0], reader[1], reader[2], reader[3]);
+                    Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t", reader[0], reader[1], reader[2], reader[3], reader[4]);
                 }
                 conn1.Close();
             }
