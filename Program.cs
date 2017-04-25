@@ -26,15 +26,13 @@ namespace BigDataNet
             //new SqlConnection(@"Data Source = IBM-08;Initial Catalog=Northwind;User ID = sa; Password = praktyka"); DESKTOP-EJMT7JC
             new SqlConnection(str + "User ID=" + builder.UserID.ToString() + ";Password=" + builder.Password.ToString() + ";");
             conn1.StateChange += Conn1_StateChange;
-            //SqlCommand command = ;
+            SqlCommand command = new SqlCommand();
+            command.CommandText = @"insert into Employees values('Michał','Bartłomiejczyk','dyktator',400.00 )";
             try
             {
                 conn1.Open();
-                SqlDataReader reader = new SqlCommand(@"select a1,a2,a3,a5 from MyView1", conn1).ExecuteReader();
-                while (reader.Read())
-                {
-                    Console.WriteLine("{0}\t{1}\t{2}\t{3}\t", reader[0], reader[1], reader[2], reader[3]);
-                }
+                command.Connection = conn1;
+                int rowsInserted = command.ExecuteNonQuery();
                 conn1.Close();
             }
             catch (NullReferenceException)
