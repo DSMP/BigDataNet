@@ -26,16 +26,16 @@ namespace BigDataNet
             //new SqlConnection(@"Data Source = IBM-08;Initial Catalog=Northwind;User ID = sa; Password = praktyka"); DESKTOP-EJMT7JC
             new SqlConnection(str + "User ID=" + builder.UserID.ToString() + ";Password=" + builder.Password.ToString() + ";");
             conn1.StateChange += Conn1_StateChange;
-            SqlCommand command = new SqlCommand();
+            SqlCommand command = new SqlCommand("GetPersons", conn1);
             command.CommandType = System.Data.CommandType.StoredProcedure;
-            command.CommandText = "sp_dodaj";
-            command.Parameters.Add(new SqlParameter("arg1", 1));
-            command.Parameters.Add(new SqlParameter("arg2", 3));
+            command.Parameters.Add(new SqlParameter("@lastname", System.Data.SqlDbType.VarChar,50)).Value = "%";
+            command.Parameters.Add(new SqlParameter("@count", System.Data.SqlDbType.Int));
+            command.Parameters["@count"].Direction = System.Data.ParameterDirection.Output;
+            //SqlDataReader reader = command.ExecuteReader();
             try
             {
                 conn1.Open();
-                command.Connection = conn1;
-                Console.WriteLine(command.ExecuteScalar());
+                Console.WriteLine("{0} {1}", "Count: ", command.Parameters["@count"].Value.ToString());
                 conn1.Close();
             }
             catch (NullReferenceException)
