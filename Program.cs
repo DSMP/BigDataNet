@@ -22,14 +22,19 @@ namespace BigDataNet
             Console.Write("Passowrd: "); builder.Password = Console.ReadLine().ToString();
             String str = ConfigurationManager.AppSettings["sqlconnectionstring"];
             Console.WriteLine(str + "User ID=" + builder.UserID + ";Password=" + builder.Password + ";");
-            DbConnection conn1 =
-            //new SqlConnection(@"Data Source = IBM-08;Initial Catalog=Northwind;User ID = sa; Password = praktyka");
+            SqlConnection conn1 =
+            //new SqlConnection(@"Data Source = IBM-08;Initial Catalog=Northwind;User ID = sa; Password = praktyka"); DESKTOP-EJMT7JC
             new SqlConnection(str + "User ID=" + builder.UserID.ToString() + ";Password=" + builder.Password.ToString() + ";");
             conn1.StateChange += Conn1_StateChange;
+            //SqlCommand command = ;
             try
             {
                 conn1.Open();
-                Console.WriteLine("dziala db");
+                SqlDataReader reader = new SqlCommand("select ProductID, ProductName, UnitPrice, UnitsInStock from products where UnitPrice IS NOT NULL", conn1).ExecuteReader();
+                while (reader.Read())
+                {
+                    Console.WriteLine("{0}\t{1}\t{2}\t{3}\t", reader[0], reader[1], reader[2], reader[3]);
+                }
                 conn1.Close();
             }
             catch (NullReferenceException)

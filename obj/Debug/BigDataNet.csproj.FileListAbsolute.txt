@@ -5,3 +5,9 @@ D:\Documents\Visual Studio 2015\GitProjects\BigDataNet\bin\Debug\BigDataNet.pdb
 D:\Documents\Visual Studio 2015\GitProjects\BigDataNet\obj\Debug\BigDataNet.csprojResolveAssemblyReference.cache
 D:\Documents\Visual Studio 2015\GitProjects\BigDataNet\obj\Debug\BigDataNet.exe
 D:\Documents\Visual Studio 2015\GitProjects\BigDataNet\obj\Debug\BigDataNet.pdb
+C:\Users\195058.IMSI\Documents\Visual Studio 2015\Projects\ConsoleApplication1\bin\Debug\BigDataNet.exe.config
+C:\Users\195058.IMSI\Documents\Visual Studio 2015\Projects\ConsoleApplication1\obj\Debug\BigDataNet.exe
+C:\Users\195058.IMSI\Documents\Visual Studio 2015\Projects\ConsoleApplication1\obj\Debug\BigDataNet.pdb
+C:\Users\195058.IMSI\Documents\Visual Studio 2015\Projects\ConsoleApplication1\bin\Debug\BigDataNet.exe
+C:\Users\195058.IMSI\Documents\Visual Studio 2015\Projects\ConsoleApplication1\bin\Debug\BigDataNet.pdb
+C:\Users\195058.IMSI\Documents\Visual Studio 2015\Projects\ConsoleApplication1\obj\Debug\BigDataNet.csprojResolveAssemblyReference.cache
