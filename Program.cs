@@ -54,17 +54,20 @@ namespace BigDataNet
             //    MessageBox.Show(e.CurrentState.ToString());
             //}
 
-            string[] names = { "Ala", "Adam", "Tomek", "Piotr", "Ewa", "Ania", "Kamil" };
-
-            var result = from name in names
-                         where name.Length < 5
-                         orderby name
-                         select name.ToUpper();
-
-            var result2 = names.Where(w => w.Length < 5).OrderBy(w => w).Select(w => w.ToUpper());
-
-            foreach (string item in result2)
-                Console.WriteLine(item);
+            var employees = new List < Employee >{
+                new Employee { FirstName = "Adam", LastName = "Nowak", Salary = 1000, StartDate = DateTime.Parse("1/4/2008") },
+                new Employee { FirstName = "Jan", LastName = "Kowalski", Salary = 1200, StartDate = DateTime.Parse("1/6/2012") },
+                new Employee { FirstName = "Michal", LastName = "Rolo", Salary = 1500, StartDate = DateTime.Parse("1/2/2002") },
+            };
+            var query = from employee in employees
+                        where employee.Salary > 1200
+                        select new
+                        {
+                            Imie = employee.FirstName,
+                            Nazwisko = employee.LastName
+                        };
+            foreach (var item in query)
+                Console.WriteLine(item.Imie + " " + item.Nazwisko);
 
             Console.ReadKey();
         }
