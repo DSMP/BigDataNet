@@ -54,20 +54,21 @@ namespace BigDataNet
             //    MessageBox.Show(e.CurrentState.ToString());
             //}
 
-            var employees = new List < Employee >{
-                new Employee { FirstName = "Adam", LastName = "Nowak", Salary = 1000, StartDate = DateTime.Parse("1/4/2008") },
-                new Employee { FirstName = "Jan", LastName = "Kowalski", Salary = 1200, StartDate = DateTime.Parse("1/6/2012") },
-                new Employee { FirstName = "Michal", LastName = "Rolo", Salary = 1500, StartDate = DateTime.Parse("1/2/2002") },
-            };
-            var query = from employee in employees
-                        where employee.Salary > 1200
-                        select new
-                        {
-                            Imie = employee.FirstName,
-                            Nazwisko = employee.LastName
-                        };
-            foreach (var item in query)
-                Console.WriteLine(item.Imie + " " + item.Nazwisko);
+            DataClasses1DataContext db = new DataClasses1DataContext(); 
+            var query = db.Categories;
+            var result = from category in query
+                         join prod in db.Products on category.CategoryID equals prod.ProductID
+                         where prod.ProductID < 20
+                         select new
+                         {
+                             Category = category.CategoryName,
+                             Product = prod.ProductName
+                         };
+
+            foreach (var item in result)
+            {
+                Console.WriteLine("{0}: {1}", item.Category, item.Product);
+            }
 
             Console.ReadKey();
         }
