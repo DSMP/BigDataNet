@@ -28,9 +28,9 @@ namespace BigDataNet
         {
             var query = db.Categories;
             var result = from category in query
-                         join prod in db.Products on category.CategoryID equals prod.ProductID
-                         let magazyn = prod.UnitsInStock * prod.UnitPrice
-                         where prod.ProductID < 20
+                         //join prod in db.Products on category.CategoryID equals prod.ProductID
+                         //let magazyn = prod.UnitsInStock * prod.UnitPrice
+                         //where prod.ProductID < 20
                          select category; 
                          //new
                          //{
@@ -44,6 +44,15 @@ namespace BigDataNet
 
         private void button2_Click(object sender, EventArgs e)
         {
+            db.SubmitChanges();
+        }
+
+        private void AddCat_Click(object sender, EventArgs e)
+        {
+            Category cat = new Category();
+            cat.CategoryName = catName.Text;
+            cat.Description = catDesc.Text;
+            db.Categories.InsertOnSubmit(cat);
             db.SubmitChanges();
         }
     }

@@ -73,18 +73,19 @@ namespace BigDataNet
             //{
             //    Console.WriteLine("{0} - {1}, wartosc: {2}, magazyn: {3}", item.Category, item.Product, item.WartoscProd, item.magazyn);
             //}
-            Product product = db.Products.FirstOrDefault(e => e.ProductID.Equals(17));
-            product.ProductName = "MyProduct";
-            product.SupplierID = 3;
-            product.UnitPrice = 30;
 
-            db.SubmitChanges();
+            //Category category = new Category();
+            //category.CategoryName = "kategoriaDSMP";
+            //category.Description = "Kategoria DSMP-a";
+
+            //db.Categories.InsertOnSubmit(category);
+
+            //db.SubmitChanges();
 
 
 
-
-            //Application.EnableVisualStyles();
-            //Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            Application.Run(new Form1());
 
             Console.ReadKey();
         }
