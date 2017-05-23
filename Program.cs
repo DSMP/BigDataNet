@@ -58,16 +58,19 @@ namespace BigDataNet
             var query = db.Categories;
             var result = from category in query
                          join prod in db.Products on category.CategoryID equals prod.ProductID
+                         let magazyn = prod.UnitsInStock * prod.UnitPrice
                          where prod.ProductID < 20
                          select new
                          {
                              Category = category.CategoryName,
-                             Product = prod.ProductName
+                             Product = prod.ProductName,
+                             WartoscProd = prod.UnitPrice,
+                             magazyn
                          };
 
             foreach (var item in result)
             {
-                Console.WriteLine("{0}: {1}", item.Category, item.Product);
+                Console.WriteLine("{0} - {1}, wartosc: {2}, magazyn: {3}", item.Category, item.Product, item.WartoscProd, item.magazyn);
             }
 
             Console.ReadKey();
