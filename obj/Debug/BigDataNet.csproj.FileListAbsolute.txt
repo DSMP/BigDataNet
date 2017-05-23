@@ -17,3 +17,5 @@ C:\Users\195058.IMSI\Desktop\DSMP\obj\Debug\BigDataNet.pdb
 C:\Users\195058.IMSI\Desktop\DSMP\bin\Debug\BigDataNet.exe
 C:\Users\195058.IMSI\Desktop\DSMP\bin\Debug\BigDataNet.pdb
 C:\Users\195058.IMSI\Desktop\DSMP\obj\Debug\BigDataNet.csprojResolveAssemblyReference.cache
+C:\Users\195058.IMSI\Desktop\DSMP\obj\Debug\BigDataNet.Form1.resources
+C:\Users\195058.IMSI\Desktop\DSMP\obj\Debug\BigDataNet.csproj.GenerateResource.Cache

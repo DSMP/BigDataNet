@@ -12,6 +12,7 @@ namespace BigDataNet
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             //    Console.WriteLine("Start DB");
@@ -54,24 +55,27 @@ namespace BigDataNet
             //    MessageBox.Show(e.CurrentState.ToString());
             //}
 
-            DataClasses1DataContext db = new DataClasses1DataContext(); 
-            var query = db.Categories;
-            var result = from category in query
-                         join prod in db.Products on category.CategoryID equals prod.ProductID
-                         let magazyn = prod.UnitsInStock * prod.UnitPrice
-                         where prod.ProductID < 20
-                         select new
-                         {
-                             Category = category.CategoryName,
-                             Product = prod.ProductName,
-                             WartoscProd = prod.UnitPrice,
-                             magazyn
-                         };
+            //DataClasses1DataContext db = new DataClasses1DataContext(); 
+            //var query = db.Categories;
+            //var result = from category in query
+            //             join prod in db.Products on category.CategoryID equals prod.ProductID
+            //             let magazyn = prod.UnitsInStock * prod.UnitPrice
+            //             where prod.ProductID < 20
+            //             select new
+            //             {
+            //                 Category = category.CategoryName,
+            //                 Product = prod.ProductName,
+            //                 WartoscProd = prod.UnitPrice,
+            //                 magazyn
+            //             };
 
-            foreach (var item in result)
-            {
-                Console.WriteLine("{0} - {1}, wartosc: {2}, magazyn: {3}", item.Category, item.Product, item.WartoscProd, item.magazyn);
-            }
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine("{0} - {1}, wartosc: {2}, magazyn: {3}", item.Category, item.Product, item.WartoscProd, item.magazyn);
+            //}
+
+            Application.EnableVisualStyles();
+            Application.Run(new Form1());
 
             Console.ReadKey();
         }
