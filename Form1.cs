@@ -28,17 +28,17 @@ namespace BigDataNet
         {
             var query = db.Categories;
             var result = from category in query
-                         //join prod in db.Products on category.CategoryID equals prod.ProductID
-                         //let magazyn = prod.UnitsInStock * prod.UnitPrice
-                         //where prod.ProductID < 20
-                         select category; 
-                         //new
-                         //{
-                         //    Category = category.CategoryName,
-                         //    Product = prod.ProductName,
-                         //    WartoscProd = prod.UnitPrice,
-                         //    magazyn
-                         //};
+                             //join prod in db.Products on category.CategoryID equals prod.ProductID
+                             //let magazyn = prod.UnitsInStock * prod.UnitPrice
+                             //where prod.ProductID < 20
+                         select category;
+            //new
+            //{
+            //    Category = category.CategoryName,
+            //    Product = prod.ProductName,
+            //    WartoscProd = prod.UnitPrice,
+            //    magazyn
+            //};
             dataGridView1.DataSource = result;
         }
 
@@ -54,6 +54,20 @@ namespace BigDataNet
             cat.Description = catDesc.Text;
             db.Categories.InsertOnSubmit(cat);
             db.SubmitChanges();
+        }
+
+        private void kasuj_Click(object sender, EventArgs e)
+        {
+            IEnumerable<Category> query = from category in db.Categories
+                                         where (category.CategoryID > Convert.ToInt32(OdZakres.Text))
+                                          where (category.CategoryID < Convert.ToInt32(doZakres.Text))
+                                          select category;
+
+            db.Categories.DeleteAllOnSubmit(query);
+
+            db.SubmitChanges();
+
+
         }
     }
 }

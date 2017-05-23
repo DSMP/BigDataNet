@@ -34,6 +34,9 @@
             this.catName = new System.Windows.Forms.TextBox();
             this.catDesc = new System.Windows.Forms.TextBox();
             this.AddCat = new System.Windows.Forms.Button();
+            this.OdZakres = new System.Windows.Forms.TextBox();
+            this.doZakres = new System.Windows.Forms.TextBox();
+            this.kasuj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,11 +93,38 @@
             this.AddCat.UseVisualStyleBackColor = true;
             this.AddCat.Click += new System.EventHandler(this.AddCat_Click);
             // 
+            // OdZakres
+            // 
+            this.OdZakres.Location = new System.Drawing.Point(46, 373);
+            this.OdZakres.Name = "OdZakres";
+            this.OdZakres.Size = new System.Drawing.Size(100, 20);
+            this.OdZakres.TabIndex = 6;
+            // 
+            // doZakres
+            // 
+            this.doZakres.Location = new System.Drawing.Point(238, 372);
+            this.doZakres.Name = "doZakres";
+            this.doZakres.Size = new System.Drawing.Size(100, 20);
+            this.doZakres.TabIndex = 7;
+            // 
+            // kasuj
+            // 
+            this.kasuj.Location = new System.Drawing.Point(362, 369);
+            this.kasuj.Name = "kasuj";
+            this.kasuj.Size = new System.Drawing.Size(111, 23);
+            this.kasuj.TabIndex = 8;
+            this.kasuj.Text = "kasuj";
+            this.kasuj.UseVisualStyleBackColor = true;
+            this.kasuj.Click += new System.EventHandler(this.kasuj_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 412);
+            this.Controls.Add(this.kasuj);
+            this.Controls.Add(this.doZakres);
+            this.Controls.Add(this.OdZakres);
             this.Controls.Add(this.AddCat);
             this.Controls.Add(this.catDesc);
             this.Controls.Add(this.catName);
@@ -117,5 +147,8 @@
         private System.Windows.Forms.TextBox catName;
         private System.Windows.Forms.TextBox catDesc;
         private System.Windows.Forms.Button AddCat;
+        private System.Windows.Forms.TextBox OdZakres;
+        private System.Windows.Forms.TextBox doZakres;
+        private System.Windows.Forms.Button kasuj;
     }
 }
