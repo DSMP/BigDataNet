@@ -20,3 +20,4 @@ C:\Users\195058.IMSI\Desktop\DSMP\obj\Debug\BigDataNet.csprojResolveAssemblyRefe
 C:\Users\195058.IMSI\Desktop\DSMP\obj\Debug\BigDataNet.Form1.resources
 C:\Users\195058.IMSI\Desktop\DSMP\obj\Debug\BigDataNet.csproj.GenerateResource.Cache
 C:\Users\195058.IMSI\Desktop\DSMP\obj\Debug\BigDataNet.Form2.resources
+C:\Users\195058.IMSI\Desktop\DSMP\obj\Debug\BigDataNet.Form3.resources

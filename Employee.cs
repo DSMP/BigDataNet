@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BigDataNet
 {
-    class Employee
+    class Employee2
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
