@@ -10,18 +10,14 @@ using System.Windows.Forms;
 
 namespace BigDataNet
 {
-    public partial class Form3 : Form
+    public partial class Form5 : Form
     {
         DataClasses1DataContext db;
-        public Form3()
+        public Form5()
         {
             db = new DataClasses1DataContext();
             InitializeComponent();
-            var query = from item in db.Employees
-                        where item.EmployeeID < 5
-                        select item;
-            employeeBindingSource.DataSource = query;
-
+            customerBindingSource.DataSource = db.Customers;
         }
     }
 }
