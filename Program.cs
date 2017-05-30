@@ -85,7 +85,7 @@ namespace BigDataNet
 
 
             Application.EnableVisualStyles();
-            Application.Run(new Form1());
+            Application.Run(new Form2());
 
             Console.ReadKey();
         }

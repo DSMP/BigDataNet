@@ -33,5 +33,16 @@ namespace BigDataNet.Properties {
                 return ((string)(this["NorthwindConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=IBM-08;Initial Catalog=Northwind;Persist Security Info=True;User ID=s" +
+            "a")]
+        public string NorthwindConnectionString1 {
+            get {
+                return ((string)(this["NorthwindConnectionString1"]));
+            }
+        }
     }
 }
