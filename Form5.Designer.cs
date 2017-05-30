@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -44,6 +43,9 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.customerBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.order_DetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +58,6 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,7 +74,7 @@
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ordersDataGridView1 = new System.Windows.Forms.DataGridView();
+            this.order_DetailsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,26 +82,17 @@
             this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            this.orderDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingNavigator)).BeginInit();
             this.customerBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_DetailBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_DetailsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDetailsBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(BigDataNet.Customer);
             // 
             // customerBindingNavigator
             // 
@@ -226,6 +218,19 @@
             this.customerBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.customerBindingNavigatorSaveItem.Text = "Save Data";
             // 
+            // ordersBindingSource
+            // 
+            this.ordersBindingSource.DataMember = "Orders";
+            this.ordersBindingSource.DataSource = this.customerBindingSource;
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(BigDataNet.Customer);
+            // 
+            // order_DetailBindingSource
+            // 
+            this.order_DetailBindingSource.DataSource = typeof(BigDataNet.Order_Detail);
+            // 
             // customerDataGridView
             // 
             this.customerDataGridView.AutoGenerateColumns = false;
@@ -243,9 +248,9 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.customerDataGridView.DataSource = this.customerBindingSource;
-            this.customerDataGridView.Location = new System.Drawing.Point(36, 24);
+            this.customerDataGridView.Location = new System.Drawing.Point(12, 28);
             this.customerDataGridView.Name = "customerDataGridView";
-            this.customerDataGridView.Size = new System.Drawing.Size(548, 150);
+            this.customerDataGridView.Size = new System.Drawing.Size(573, 127);
             this.customerDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -314,11 +319,6 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "Fax";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.customerBindingSource;
-            // 
             // ordersDataGridView
             // 
             this.ordersDataGridView.AutoGenerateColumns = false;
@@ -340,9 +340,9 @@
             this.dataGridViewTextBoxColumn25,
             this.dataGridViewTextBoxColumn26});
             this.ordersDataGridView.DataSource = this.ordersBindingSource;
-            this.ordersDataGridView.Location = new System.Drawing.Point(36, 198);
+            this.ordersDataGridView.Location = new System.Drawing.Point(12, 196);
             this.ordersDataGridView.Name = "ordersDataGridView";
-            this.ordersDataGridView.Size = new System.Drawing.Size(548, 108);
+            this.ordersDataGridView.Size = new System.Drawing.Size(573, 141);
             this.ordersDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn12
@@ -435,31 +435,23 @@
             this.dataGridViewTextBoxColumn26.HeaderText = "Customer";
             this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
             // 
-            // ordersDataGridView1
+            // order_DetailsDataGridView
             // 
-            this.ordersDataGridView1.AutoGenerateColumns = false;
-            this.ordersDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ordersDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.order_DetailsDataGridView.AutoGenerateColumns = false;
+            this.order_DetailsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.order_DetailsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn27,
             this.dataGridViewTextBoxColumn28,
             this.dataGridViewTextBoxColumn29,
             this.dataGridViewTextBoxColumn30,
             this.dataGridViewTextBoxColumn31,
             this.dataGridViewTextBoxColumn32,
-            this.dataGridViewTextBoxColumn33,
-            this.dataGridViewTextBoxColumn34,
-            this.dataGridViewTextBoxColumn35,
-            this.dataGridViewTextBoxColumn36,
-            this.dataGridViewTextBoxColumn37,
-            this.dataGridViewTextBoxColumn38,
-            this.dataGridViewTextBoxColumn39,
-            this.dataGridViewTextBoxColumn40,
-            this.dataGridViewTextBoxColumn41});
-            this.ordersDataGridView1.DataSource = this.ordersBindingSource;
-            this.ordersDataGridView1.Location = new System.Drawing.Point(40, 333);
-            this.ordersDataGridView1.Name = "ordersDataGridView1";
-            this.ordersDataGridView1.Size = new System.Drawing.Size(544, 137);
-            this.ordersDataGridView1.TabIndex = 3;
+            this.dataGridViewTextBoxColumn33});
+            this.order_DetailsDataGridView.DataSource = this.orderDetailsBindingSource;
+            this.order_DetailsDataGridView.Location = new System.Drawing.Point(12, 361);
+            this.order_DetailsDataGridView.Name = "order_DetailsDataGridView";
+            this.order_DetailsDataGridView.Size = new System.Drawing.Size(573, 140);
+            this.order_DetailsDataGridView.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn27
             // 
@@ -469,107 +461,66 @@
             // 
             // dataGridViewTextBoxColumn28
             // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "CustomerID";
-            this.dataGridViewTextBoxColumn28.HeaderText = "CustomerID";
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "ProductID";
+            this.dataGridViewTextBoxColumn28.HeaderText = "ProductID";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
             // 
             // dataGridViewTextBoxColumn29
             // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "EmployeeID";
-            this.dataGridViewTextBoxColumn29.HeaderText = "EmployeeID";
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "UnitPrice";
+            this.dataGridViewTextBoxColumn29.HeaderText = "UnitPrice";
             this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
             // 
             // dataGridViewTextBoxColumn30
             // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "OrderDate";
-            this.dataGridViewTextBoxColumn30.HeaderText = "OrderDate";
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "Quantity";
+            this.dataGridViewTextBoxColumn30.HeaderText = "Quantity";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
             // 
             // dataGridViewTextBoxColumn31
             // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "RequiredDate";
-            this.dataGridViewTextBoxColumn31.HeaderText = "RequiredDate";
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "Discount";
+            this.dataGridViewTextBoxColumn31.HeaderText = "Discount";
             this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
             // 
             // dataGridViewTextBoxColumn32
             // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "ShippedDate";
-            this.dataGridViewTextBoxColumn32.HeaderText = "ShippedDate";
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "Order";
+            this.dataGridViewTextBoxColumn32.HeaderText = "Order";
             this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
             // 
             // dataGridViewTextBoxColumn33
             // 
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "ShipVia";
-            this.dataGridViewTextBoxColumn33.HeaderText = "ShipVia";
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "Product";
+            this.dataGridViewTextBoxColumn33.HeaderText = "Product";
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
             // 
-            // dataGridViewTextBoxColumn34
+            // orderDetailsBindingSource
             // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "Freight";
-            this.dataGridViewTextBoxColumn34.HeaderText = "Freight";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "ShipName";
-            this.dataGridViewTextBoxColumn35.HeaderText = "ShipName";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.DataPropertyName = "ShipAddress";
-            this.dataGridViewTextBoxColumn36.HeaderText = "ShipAddress";
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            // 
-            // dataGridViewTextBoxColumn37
-            // 
-            this.dataGridViewTextBoxColumn37.DataPropertyName = "ShipCity";
-            this.dataGridViewTextBoxColumn37.HeaderText = "ShipCity";
-            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            // 
-            // dataGridViewTextBoxColumn38
-            // 
-            this.dataGridViewTextBoxColumn38.DataPropertyName = "ShipRegion";
-            this.dataGridViewTextBoxColumn38.HeaderText = "ShipRegion";
-            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
-            // 
-            // dataGridViewTextBoxColumn39
-            // 
-            this.dataGridViewTextBoxColumn39.DataPropertyName = "ShipPostalCode";
-            this.dataGridViewTextBoxColumn39.HeaderText = "ShipPostalCode";
-            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
-            // 
-            // dataGridViewTextBoxColumn40
-            // 
-            this.dataGridViewTextBoxColumn40.DataPropertyName = "ShipCountry";
-            this.dataGridViewTextBoxColumn40.HeaderText = "ShipCountry";
-            this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
-            // 
-            // dataGridViewTextBoxColumn41
-            // 
-            this.dataGridViewTextBoxColumn41.DataPropertyName = "Customer";
-            this.dataGridViewTextBoxColumn41.HeaderText = "Customer";
-            this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
+            this.orderDetailsBindingSource.DataMember = "Order_Details";
+            this.orderDetailsBindingSource.DataSource = this.ordersBindingSource;
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 573);
-            this.Controls.Add(this.ordersDataGridView1);
+            this.ClientSize = new System.Drawing.Size(614, 618);
+            this.Controls.Add(this.order_DetailsDataGridView);
             this.Controls.Add(this.ordersDataGridView);
             this.Controls.Add(this.customerDataGridView);
             this.Controls.Add(this.customerBindingNavigator);
             this.Name = "Form5";
             this.Text = "Form5";
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingNavigator)).EndInit();
             this.customerBindingNavigator.ResumeLayout(false);
             this.customerBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_DetailBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_DetailsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDetailsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -591,6 +542,8 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton customerBindingNavigatorSaveItem;
+        private System.Windows.Forms.BindingSource ordersBindingSource;
+        private System.Windows.Forms.BindingSource order_DetailBindingSource;
         private System.Windows.Forms.DataGridView customerDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -603,7 +556,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.BindingSource ordersBindingSource;
         private System.Windows.Forms.DataGridView ordersDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
@@ -620,7 +572,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridView ordersDataGridView1;
+        private System.Windows.Forms.DataGridView order_DetailsDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
@@ -628,13 +580,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn39;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn40;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn41;
+        private System.Windows.Forms.BindingSource orderDetailsBindingSource;
     }
 }
