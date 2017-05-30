@@ -30,8 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoryBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            System.Windows.Forms.Label categoryIDLabel;
+            System.Windows.Forms.Label categoryNameLabel;
+            System.Windows.Forms.Label descriptionLabel;
+            System.Windows.Forms.Label lengthLabel;
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -43,46 +47,44 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.categoryBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsDataGridView = new System.Windows.Forms.DataGridView();
+            this.productBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.productDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingNavigator)).BeginInit();
-            this.categoryBindingNavigator.SuspendLayout();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryIDTextBox = new System.Windows.Forms.TextBox();
+            this.categoryNameTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.lengthTextBox = new System.Windows.Forms.TextBox();
+            categoryIDLabel = new System.Windows.Forms.Label();
+            categoryNameLabel = new System.Windows.Forms.Label();
+            descriptionLabel = new System.Windows.Forms.Label();
+            lengthLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).BeginInit();
+            this.productBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // categoryBindingSource
+            // productBindingSource
             // 
-            this.categoryBindingSource.DataSource = typeof(BigDataNet.Category);
+            this.productBindingSource.DataSource = typeof(BigDataNet.Product);
             // 
-            // categoryBindingNavigator
+            // productBindingNavigator
             // 
-            this.categoryBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.categoryBindingNavigator.BindingSource = this.categoryBindingSource;
-            this.categoryBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.categoryBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.categoryBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.productBindingNavigator.BindingSource = this.productBindingSource;
+            this.productBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.productBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.productBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -94,17 +96,17 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.categoryBindingNavigatorSaveItem});
-            this.categoryBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.categoryBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.categoryBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.categoryBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.categoryBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.categoryBindingNavigator.Name = "categoryBindingNavigator";
-            this.categoryBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.categoryBindingNavigator.Size = new System.Drawing.Size(638, 25);
-            this.categoryBindingNavigator.TabIndex = 0;
-            this.categoryBindingNavigator.Text = "bindingNavigator1";
+            this.productBindingNavigatorSaveItem});
+            this.productBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.productBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.productBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.productBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.productBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.productBindingNavigator.Name = "productBindingNavigator";
+            this.productBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.productBindingNavigator.Size = new System.Drawing.Size(646, 25);
+            this.productBindingNavigator.TabIndex = 0;
+            this.productBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -191,100 +193,90 @@
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
-            // categoryBindingNavigatorSaveItem
+            // productBindingNavigatorSaveItem
             // 
-            this.categoryBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.categoryBindingNavigatorSaveItem.Enabled = false;
-            this.categoryBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("categoryBindingNavigatorSaveItem.Image")));
-            this.categoryBindingNavigatorSaveItem.Name = "categoryBindingNavigatorSaveItem";
-            this.categoryBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.categoryBindingNavigatorSaveItem.Text = "Save Data";
+            this.productBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.productBindingNavigatorSaveItem.Enabled = false;
+            this.productBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("productBindingNavigatorSaveItem.Image")));
+            this.productBindingNavigatorSaveItem.Name = "productBindingNavigatorSaveItem";
+            this.productBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.productBindingNavigatorSaveItem.Text = "Save Data";
             // 
-            // productBindingSource
+            // productDataGridView
             // 
-            this.productBindingSource.DataSource = typeof(BigDataNet.Product);
-            this.productBindingSource.CurrentChanged += new System.EventHandler(this.productBindingSource_CurrentChanged);
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.categoryBindingSource;
-            // 
-            // productsDataGridView
-            // 
-            this.productsDataGridView.AutoGenerateColumns = false;
-            this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productDataGridView.AutoGenerateColumns = false;
+            this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
             this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewTextBoxColumn14});
-            this.productsDataGridView.DataSource = this.productsBindingSource;
-            this.productsDataGridView.Location = new System.Drawing.Point(12, 250);
-            this.productsDataGridView.Name = "productsDataGridView";
-            this.productsDataGridView.Size = new System.Drawing.Size(601, 220);
-            this.productsDataGridView.TabIndex = 2;
+            this.dataGridViewTextBoxColumn10});
+            this.productDataGridView.DataSource = this.productBindingSource;
+            this.productDataGridView.Location = new System.Drawing.Point(12, 277);
+            this.productDataGridView.Name = "productDataGridView";
+            this.productDataGridView.Size = new System.Drawing.Size(609, 220);
+            this.productDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ProductID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ProductName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ProductName";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "SupplierID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "SupplierID";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CategoryID";
+            this.dataGridViewTextBoxColumn4.HeaderText = "CategoryID";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ProductID";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ProductID";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "QuantityPerUnit";
+            this.dataGridViewTextBoxColumn5.HeaderText = "QuantityPerUnit";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "ProductName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "ProductName";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "UnitPrice";
+            this.dataGridViewTextBoxColumn6.HeaderText = "UnitPrice";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "SupplierID";
-            this.dataGridViewTextBoxColumn7.HeaderText = "SupplierID";
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "UnitsInStock";
+            this.dataGridViewTextBoxColumn7.HeaderText = "UnitsInStock";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // dataGridViewTextBoxColumn8
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "CategoryID";
-            this.dataGridViewTextBoxColumn8.HeaderText = "CategoryID";
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "UnitsOnOrder";
+            this.dataGridViewTextBoxColumn8.HeaderText = "UnitsOnOrder";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // dataGridViewTextBoxColumn9
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "QuantityPerUnit";
-            this.dataGridViewTextBoxColumn9.HeaderText = "QuantityPerUnit";
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "ReorderLevel";
+            this.dataGridViewTextBoxColumn9.HeaderText = "ReorderLevel";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "UnitPrice";
-            this.dataGridViewTextBoxColumn10.HeaderText = "UnitPrice";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "UnitsInStock";
-            this.dataGridViewTextBoxColumn11.HeaderText = "UnitsInStock";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "UnitsOnOrder";
-            this.dataGridViewTextBoxColumn12.HeaderText = "UnitsOnOrder";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "ReorderLevel";
-            this.dataGridViewTextBoxColumn13.HeaderText = "ReorderLevel";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
             // dataGridViewCheckBoxColumn1
             // 
@@ -292,70 +284,102 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "Discontinued";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
-            // dataGridViewTextBoxColumn14
+            // dataGridViewTextBoxColumn10
             // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Category";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Category";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Category";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Category";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
-            // categoryDataGridView
+            // categoryIDLabel
             // 
-            this.categoryDataGridView.AutoGenerateColumns = false;
-            this.categoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.categoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.categoryDataGridView.DataSource = this.categoryBindingSource;
-            this.categoryDataGridView.Location = new System.Drawing.Point(12, 28);
-            this.categoryDataGridView.Name = "categoryDataGridView";
-            this.categoryDataGridView.Size = new System.Drawing.Size(601, 216);
-            this.categoryDataGridView.TabIndex = 2;
-            this.categoryDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.categoryDataGridView_CellContentClick);
+            categoryIDLabel.AutoSize = true;
+            categoryIDLabel.Location = new System.Drawing.Point(72, 58);
+            categoryIDLabel.Name = "categoryIDLabel";
+            categoryIDLabel.Size = new System.Drawing.Size(66, 13);
+            categoryIDLabel.TabIndex = 2;
+            categoryIDLabel.Text = "Category ID:";
             // 
-            // dataGridViewTextBoxColumn1
+            // categoryIDTextBox
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CategoryID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "CategoryID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.categoryIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Category.CategoryID", true));
+            this.categoryIDTextBox.Location = new System.Drawing.Point(161, 55);
+            this.categoryIDTextBox.Name = "categoryIDTextBox";
+            this.categoryIDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.categoryIDTextBox.TabIndex = 3;
             // 
-            // dataGridViewTextBoxColumn2
+            // categoryNameLabel
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CategoryName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CategoryName";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            categoryNameLabel.AutoSize = true;
+            categoryNameLabel.Location = new System.Drawing.Point(72, 84);
+            categoryNameLabel.Name = "categoryNameLabel";
+            categoryNameLabel.Size = new System.Drawing.Size(83, 13);
+            categoryNameLabel.TabIndex = 4;
+            categoryNameLabel.Text = "Category Name:";
             // 
-            // dataGridViewTextBoxColumn3
+            // categoryNameTextBox
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.categoryNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Category.CategoryName", true));
+            this.categoryNameTextBox.Location = new System.Drawing.Point(161, 81);
+            this.categoryNameTextBox.Name = "categoryNameTextBox";
+            this.categoryNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.categoryNameTextBox.TabIndex = 5;
             // 
-            // dataGridViewTextBoxColumn4
+            // descriptionLabel
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Picture";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Picture";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(72, 110);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(63, 13);
+            descriptionLabel.TabIndex = 6;
+            descriptionLabel.Text = "Description:";
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Category.Description", true));
+            this.descriptionTextBox.Location = new System.Drawing.Point(161, 107);
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(100, 20);
+            this.descriptionTextBox.TabIndex = 7;
+            // 
+            // lengthLabel
+            // 
+            lengthLabel.AutoSize = true;
+            lengthLabel.Location = new System.Drawing.Point(72, 170);
+            lengthLabel.Name = "lengthLabel";
+            lengthLabel.Size = new System.Drawing.Size(43, 13);
+            lengthLabel.TabIndex = 8;
+            lengthLabel.Text = "Length:";
+            // 
+            // lengthTextBox
+            // 
+            this.lengthTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Category.Picture.Length", true));
+            this.lengthTextBox.Location = new System.Drawing.Point(121, 167);
+            this.lengthTextBox.Name = "lengthTextBox";
+            this.lengthTextBox.Size = new System.Drawing.Size(100, 20);
+            this.lengthTextBox.TabIndex = 9;
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 490);
-            this.Controls.Add(this.categoryDataGridView);
-            this.Controls.Add(this.productsDataGridView);
-            this.Controls.Add(this.categoryBindingNavigator);
+            this.ClientSize = new System.Drawing.Size(646, 524);
+            this.Controls.Add(lengthLabel);
+            this.Controls.Add(this.lengthTextBox);
+            this.Controls.Add(categoryIDLabel);
+            this.Controls.Add(this.categoryIDTextBox);
+            this.Controls.Add(categoryNameLabel);
+            this.Controls.Add(this.categoryNameTextBox);
+            this.Controls.Add(descriptionLabel);
+            this.Controls.Add(this.descriptionTextBox);
+            this.Controls.Add(this.productDataGridView);
+            this.Controls.Add(this.productBindingNavigator);
             this.Name = "Form4";
             this.Text = "Form4";
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingNavigator)).EndInit();
-            this.categoryBindingNavigator.ResumeLayout(false);
-            this.categoryBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).EndInit();
+            this.productBindingNavigator.ResumeLayout(false);
+            this.productBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,8 +387,8 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource categoryBindingSource;
-        private System.Windows.Forms.BindingNavigator categoryBindingNavigator;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.BindingNavigator productBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -376,25 +400,22 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton categoryBindingNavigatorSaveItem;
-        private System.Windows.Forms.BindingSource productBindingSource;
-        private System.Windows.Forms.BindingSource productsBindingSource;
-        private System.Windows.Forms.DataGridView productsDataGridView;
+        private System.Windows.Forms.ToolStripButton productBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridView productDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridView categoryDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.TextBox categoryIDTextBox;
+        private System.Windows.Forms.TextBox categoryNameTextBox;
+        private System.Windows.Forms.TextBox descriptionTextBox;
+        private System.Windows.Forms.TextBox lengthTextBox;
     }
 }

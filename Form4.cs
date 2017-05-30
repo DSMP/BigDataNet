@@ -17,7 +17,7 @@ namespace BigDataNet
         {
             db = new DataClasses1DataContext();
             InitializeComponent();
-            categoryBindingSource.DataSource = db.Categories;
+            productBindingSource.DataSource = db.Products;
 
         }
 
